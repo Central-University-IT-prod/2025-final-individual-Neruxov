@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: AdverteeBackend
+  docker:
+    compose:
+      file: dev-compose.yml
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+    url: ${POSTGRES_JDBC_URL}
+  jpa:
+    hibernate:
+      ddl-auto: update
+  #    show-sql: true
+  cloud:
+    aws:
+      s3:
+        endpoint: ${S3_ENDPOINT}
+        bucket: ${S3_BUCKET_NAME}
+      credentials:
+        access-key: ${S3_KEY_ID}
+        secret-key: ${S3_SECRET_KEY}
+      region:
+        static: ru-central1-a
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      base-url: ${OPENAI_BASE_URL}
+  cache:
+    caffeine:
+      spec: maximumSize=1000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus, health
+
+springdoc:
+  paths-to-match: /**
+  swagger-ui:
+    path: /docs/
+  api-docs:
+    path: /docs/v3
+
+ktgram:
+  bot:
+    - token: ${TELEGRAM_BOT_TOKEN}

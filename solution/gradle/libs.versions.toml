@@ -1,0 +1,89 @@
+[versions]
+kotlin = "2.1.0"
+kotlinx-coroutines = "1.10.1"
+spring = "3.4.2"
+spring-ai = "1.0.0-M6"
+spring-dependency-management = "1.1.7"
+testcontainers = "1.20.4"
+kotest = "5.9.1"
+kotest-spring = "1.3.0"
+kotest-testcontainers = "2.0.2"
+awspring = "3.3.0"
+mockk = "1.13.16"
+stove = "REDACTED-SNAPSHOT"
+springdoc = "2.8.3"
+telegram-bot = "7.8.0"
+ksp = "2.1.0-1.0.29"
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+
+spring-boot = { id = "org.springframework.boot", version.ref = "spring" }
+spring-kotlin = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+spring-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin" }
+spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management" }
+
+jacoco = { id = "jacoco" }
+
+telegram-bot = { id = "eu.vendeli.telegram-bot", version.ref = "telegram-bot" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+[libraries]
+
+testcontainers-bom = { group = "org.testcontainers", name = "testcontainers-bom", version.ref = "testcontainers" }
+
+testcontainers-junit = { module = "org.testcontainers:junit-jupiter" }
+testcontainers-postgres = { module = "org.testcontainers:postgresql" }
+testcontainers-localstack = { module = "org.testcontainers:localstack" }
+
+kotest-bom = { group = "io.kotest", name = "kotest-bom", version.ref = "kotest" }
+
+kotest-runner = { module = "io.kotest:kotest-runner-junit5" }
+kotest-spring = { module = "io.kotest.extensions:kotest-extensions-spring", version.ref = "kotest-spring" }
+kotest-testcontainers = { module = "io.kotest.extensions:kotest-extensions-testcontainers", version.ref = "kotest-testcontainers" }
+
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib" }
+kotlin-jackson = { module = "com.fasterxml.jackson.module:jackson-module-kotlin" }
+
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
+
+spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter" }
+spring-boot-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+spring-boot-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
+spring-boot-validation = { module = "org.springframework.boot:spring-boot-starter-validation" }
+spring-boot-cache = { module = "org.springframework.boot:spring-boot-starter-cache" }
+spring-boot-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+spring-boot-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+spring-boot-devtools = { module = "org.springframework.boot:spring-boot-devtools" }
+spring-boot-docker = { module = "org.springframework.boot:spring-boot-docker-compose" }
+spring-boot-testcontainers = { module = "org.springframework.boot:spring-boot-testcontainers" }
+
+spring-ai-openai = { module = "org.springframework.ai:spring-ai-openai-spring-boot-starter", version.ref = "spring-ai" }
+
+micrometer-prometheus = { module = "io.micrometer:micrometer-registry-prometheus" }
+
+awspring-bom = { module = "io.awspring.cloud:spring-cloud-aws-dependencies", version.ref = "awspring" }
+awspring-s3 = { module = "io.awspring.cloud:spring-cloud-aws-starter-s3" }
+
+springdoc-swagger = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "springdoc" }
+
+postgres = { module = "org.postgresql:postgresql" }
+
+caffeine = { module = "com.github.ben-manes.caffeine:caffeine" }
+
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+
+stove-spring = { module = "com.trendyol:stove-spring-testing-e2e", version.ref = "stove" }
+stove-http = { module = "com.trendyol:stove-testing-e2e-http", version.ref = "stove" }
+
+telegram-spring-starter = { module = "eu.vendeli:spring-ktgram-starter", version.ref = "telegram-bot" }
+telegram-ksp = { module = "eu.vendeli:ksp", version.ref = "telegram-bot" }
+
+[bundles]
+kotlin = ["kotlin-reflect", "kotlin-stdlib", "kotlin-jackson"]
+kotest = ["kotest-runner", "kotest-spring", "kotest-testcontainers", "kotlinx-coroutines-core", "kotlinx-coroutines-test"]
+
+# источник: https://github.com/wpanas/testcontainers-examples/blob/master/gradle/libs.versions.toml
+# убраны лишние зависимости

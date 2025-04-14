@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Заголовок рекламного объявления"
+    },
+    "text": {
+      "type": "string",
+      "description": "Подзаголовок (текст) рекламного объявления"
+    },
+    "rejected": {
+      "type": "boolean",
+      "description": "Отказ в генерации объявления, если запрос не прошел модерацию"
+    }
+  },
+  "required": [
+    "title",
+    "text",
+    "rejected"
+  ],
+  "additionalProperties": false
+}

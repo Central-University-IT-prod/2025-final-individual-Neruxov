@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "safe": {
+      "type": "boolean",
+      "description": "Вердикт проверки на безопасность."
+    },
+    "reason": {
+      "type": "string",
+      "description": "Краткое объяснение, почему сообщение небезопасно. Только в случае safe = false"
+    }
+  },
+  "required": [
+    "safe",
+    "reason"
+  ],
+  "additionalProperties": false
+}
